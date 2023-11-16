@@ -3,8 +3,8 @@ import * as Yup from 'yup';
 import { ErrMessage, Input, StyledForm } from './ContactForm.styled';
 import { BtnClose } from 'components/ContactCard/ContactCard.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/operation';
+import { selectContacts } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operation';
 
 const contactSchema = Yup.object().shape({
   name: Yup.string()
