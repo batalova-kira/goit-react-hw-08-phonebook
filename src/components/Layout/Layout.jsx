@@ -1,4 +1,4 @@
-import { Toaster } from 'react-hot-toast';
+// import { Toaster } from 'react-hot-toast';
 import { AppBar } from 'components/AppBar/AppBar';
 import { SharedLayout } from './Layout.styled';
 import { Suspense } from 'react';
