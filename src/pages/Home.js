@@ -32,7 +32,7 @@ export default function HomePage() {
             pt: 8,
           }}
         >
-          Hello! It`s Home Page
+          Hello! It`s Home Page!
         </Typography>
       </Box>
     </>

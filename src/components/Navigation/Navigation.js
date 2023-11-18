@@ -1,18 +1,18 @@
 import { Stack } from '@mui/material';
+import { StyledLink } from 'components/AuthNav/AuthNav.styled';
 import { useAuth } from 'hooks/useAuth';
-import { NavLink } from 'react-router-dom';
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
   return (
     <Stack direction="row" spacing={2} sx={{ flexGrow: 1, p: 0 }}>
-      <NavLink to="/" color="inherit">
+      <StyledLink to="/" color="inherit">
         Home
-      </NavLink>
+      </StyledLink>
       {isLoggedIn && (
-        <NavLink to="/contacts" color="inherit">
+        <StyledLink to="/contacts" color="inherit">
           Contacts
-        </NavLink>
+        </StyledLink>
       )}
     </Stack>
   );
