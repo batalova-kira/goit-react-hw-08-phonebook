@@ -6,7 +6,6 @@ export default function HomePage() {
       <Box
         sx={{
           display: 'flex',
-          // alignItems: 'center',
           justifyContent: 'center',
           backgroundImage: 'url(https://source.unsplash.com/random?wallpapers)',
           backgroundRepeat: 'no-repeat',
