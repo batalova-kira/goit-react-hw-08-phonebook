@@ -1,4 +1,4 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Formik } from 'formik';
 import * as Yup from 'yup';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operation';
 import { Button } from '@mui/material';
 import { selectVisibleContacts } from 'redux/contacts/selectors';
+import { Input, StyledForm } from './ContactForm.styled';
 
 const contactSchema = Yup.object().shape({
   name: Yup.string()
@@ -51,21 +52,35 @@ export const ContactForm = () => {
         });
       }}
     >
-      <Form>
+      <StyledForm>
         <label htmlFor="name">Name</label>
-        <Field name="name" placeholder="Please enter your name" />
+        <Input name="name" placeholder="Please enter your name" />
         <ErrorMessage name="name" component="div" />
 
         <label htmlFor="number">Number</label>
-        <Field
+        <Input
           name="number"
           placeholder="Please enter your number"
           type="text"
         />
         <ErrorMessage name="number" component="div" />
 
-        <Button type="submit">Add contact</Button>
-      </Form>
+        <Button
+          type="submit"
+          variant="contained"
+          size="small"
+          sx={{
+            backgroundColor: 'secondary.main',
+            mb: 2,
+            width: '30%',
+            ':hover': {
+              backgroundColor: 'secondary.dark',
+            },
+          }}
+        >
+          Add contact
+        </Button>
+      </StyledForm>
     </Formik>
   );
 };

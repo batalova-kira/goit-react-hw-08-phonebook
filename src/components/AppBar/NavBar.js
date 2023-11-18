@@ -15,10 +15,12 @@ export const NavBar = () => {
         display: 'flex',
         flexDirection: 'row',
         height: 16,
-        mb: 2,
+        pb: 2,
         p: 2,
         justifyContent: 'start',
         alignItems: 'center',
+        backgroundColor: 'primary.darker',
+        boxShadow: 2,
       }}
     >
       <Navigation />

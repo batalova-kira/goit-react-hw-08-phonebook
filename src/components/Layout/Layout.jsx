@@ -13,7 +13,7 @@ export const Layout = () => {
   const { isRefreshing } = useAuth();
 
   return (
-    <Container>
+    <Container sx={{ height: '100vh' }}>
       {isRefreshing ? (
         <CircularProgress disableShrink />
       ) : (

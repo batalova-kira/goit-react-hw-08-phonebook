@@ -1,3 +1,4 @@
+import { Box, Typography } from '@mui/material';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/Contactlist';
 import { Filter } from 'components/Filter/Filter';
@@ -16,13 +17,47 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <>
-      <h1>Phonebook</h1>
+    <Box
+      sx={{
+        height: '100vh',
+        color: 'primary.darker',
+
+        background:
+          'linear-gradient(0deg, rgba(224,246,250,1) 42%, rgba(253,234,232,0.8015581232492998) 75%)',
+        p: 2,
+        opacity: 0.9,
+      }}
+    >
+      <Typography
+        component="h3"
+        variant="h5"
+        sx={{
+          color: 'primary.darker',
+          textTransform: 'uppercase',
+          fontWeight: 600,
+          textAlign: 'center',
+          pb: 2,
+        }}
+      >
+        Phonebook
+      </Typography>
       <ContactForm />
       {isLoading && !error && <b>Request in progress...</b>}
-      <h2>Contacts</h2>
+      <Typography
+        component="h3"
+        variant="h5"
+        sx={{
+          color: 'primary.darker',
+          textTransform: 'uppercase',
+          fontWeight: 600,
+          textAlign: 'center',
+          pb: 2,
+        }}
+      >
+        Contacts
+      </Typography>
       <Filter />
       <ContactList />
-    </>
+    </Box>
   );
 }

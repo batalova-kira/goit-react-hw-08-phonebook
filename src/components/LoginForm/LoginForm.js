@@ -19,15 +19,46 @@ export const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
-      <TextField type="email" label="Email" name="email" required fullWidth />
+      <TextField
+        type="email"
+        label="Email"
+        name="email"
+        size="small"
+        required
+        fullWidth
+        sx={{
+          backgroundColor: 'primary.contrastText',
+          color: 'primary.darker',
+          mb: 2,
+          borderRadius: 1,
+        }}
+      />
       <TextField
         type="password"
         label="Password"
         name="password"
+        size="small"
         required
         fullWidth
+        sx={{
+          backgroundColor: 'primary.contrastText',
+          color: 'primary.darker',
+          mb: 2,
+          borderRadius: 1,
+        }}
       />
-      <Button type="submit">Log In</Button>
+      <Button
+        type="submit"
+        variant="contained"
+        sx={{
+          backgroundColor: 'secondary.main',
+          ':hover': {
+            backgroundColor: 'secondary.dark',
+          },
+        }}
+      >
+        Log In
+      </Button>
     </form>
   );
 };

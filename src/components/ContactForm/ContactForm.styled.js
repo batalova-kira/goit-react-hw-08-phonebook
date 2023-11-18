@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Form, ErrorMessage, Field } from 'formik';
+import { Form, Field } from 'formik';
 
 export const StyledForm = styled(Form)`
   display: flex;
@@ -10,9 +10,10 @@ export const Input = styled(Field)`
   max-width: 380px;
   font-size: 18px;
   padding: 10px 10px 10px 5px;
+  margin-bottom: 16px;
   display: block;
-  border: none;
-
+  border: 1px solid #16b3cf;
+  border-radius: 4px;
   &:focus,
   &:hover,
   &:active {

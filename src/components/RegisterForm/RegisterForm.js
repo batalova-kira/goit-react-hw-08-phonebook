@@ -1,3 +1,4 @@
+import { Button, TextField } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/auth-operations';
 
@@ -19,19 +20,61 @@ export const RegisterForm = () => {
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Username
-        <input type="text" name="name" />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Register</button>
+      <TextField
+        type="text"
+        name="name"
+        label="Username"
+        size="small"
+        required
+        fullWidth
+        sx={{
+          backgroundColor: 'primary.contrastText',
+          color: 'secondary.darker',
+          mb: 2,
+          borderRadius: 1,
+        }}
+      />
+      <TextField
+        type="email"
+        name="email"
+        label="Email"
+        size="small"
+        required
+        fullWidth
+        sx={{
+          backgroundColor: 'primary.contrastText',
+          color: 'secondary.darker',
+          mb: 2,
+          borderRadius: 1,
+        }}
+      />
+      <TextField
+        type="password"
+        name="password"
+        label="Password"
+        size="small"
+        required
+        fullWidth
+        sx={{
+          backgroundColor: 'primary.contrastText',
+          color: 'secondary.darker',
+          mb: 2,
+          borderRadius: 1,
+        }}
+      />
+
+      <Button
+        type="submit"
+        variant="contained"
+        sx={{
+          backgroundColor: 'secondary.main',
+          ':hover': {
+            backgroundColor: 'secondary.dark',
+          },
+        }}
+      >
+        Register
+      </Button>
     </form>
   );
 };
