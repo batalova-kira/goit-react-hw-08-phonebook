@@ -1,3 +1,4 @@
+import { Button, FormControl, TextField } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/auth-operations';
 
@@ -18,15 +19,15 @@ export const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Log In</button>
+      <TextField type="email" label="Email" name="email" required fullWidth />
+      <TextField
+        type="password"
+        label="Password"
+        name="password"
+        required
+        fullWidth
+      />
+      <Button type="submit">Log In</Button>
     </form>
   );
 };

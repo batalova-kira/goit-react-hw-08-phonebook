@@ -1,17 +1,31 @@
 // import { Toaster } from 'react-hot-toast';
-import { AppBar } from 'components/AppBar/AppBar';
+import { NavBar } from 'components/AppBar/NavBar';
 import { SharedLayout } from './Layout.styled';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import { useAuth } from 'hooks/useAuth';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import { CircularProgress, Container } from '@mui/material';
 
 export const Layout = () => {
+  const { isRefreshing } = useAuth();
+
   return (
-    <SharedLayout>
-      <AppBar />
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
+    <Container>
+      {isRefreshing ? (
+        <CircularProgress disableShrink />
+      ) : (
+        <>
+          <NavBar />
+          <Suspense fallback={null}>
+            <Outlet />
+          </Suspense>
+        </>
+      )}
       {/* <Toaster position="top-right" reverseOrder={false} /> */}
-    </SharedLayout>
+    </Container>
   );
 };

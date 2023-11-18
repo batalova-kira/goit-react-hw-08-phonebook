@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { InputFilter } from './Filter.styled';
 import { onChangeFilter } from 'redux/filterSlice';
 import { selectFilter } from 'redux/contacts/selectors';
 
@@ -10,7 +9,7 @@ export const Filter = () => {
   return (
     <div>
       <h3>Find contacts by name</h3>
-      <InputFilter
+      <input
         type="text"
         value={filter}
         onChange={e => {

@@ -8,13 +8,13 @@ const ContactList = () => {
   const contacts = useSelector(selectVisibleContacts);
 
   return (
-    <List>
+    <ul>
       {contacts.map(item => (
         <ContactItem key={item.id}>
           <ContactCard contact={item} />
         </ContactItem>
       ))}
-    </List>
+    </ul>
   );
 };
 

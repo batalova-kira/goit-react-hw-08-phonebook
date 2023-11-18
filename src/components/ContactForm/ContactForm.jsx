@@ -1,10 +1,11 @@
-import { Formik } from 'formik';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import { ErrMessage, Input, StyledForm } from './ContactForm.styled';
-import { BtnClose } from 'components/ContactCard/ContactCard.styled';
+
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from 'redux/contacts/selectors';
+
 import { addContact } from 'redux/contacts/operation';
+import { Button } from '@mui/material';
+import { selectVisibleContacts } from 'redux/contacts/selectors';
 
 const contactSchema = Yup.object().shape({
   name: Yup.string()
@@ -15,7 +16,7 @@ const contactSchema = Yup.object().shape({
 });
 
 export const ContactForm = () => {
-  const contacts = useSelector(selectContacts);
+  const contacts = useSelector(selectVisibleContacts);
   const dispatch = useDispatch();
 
   const onAddContact = newContact => {
@@ -50,21 +51,21 @@ export const ContactForm = () => {
         });
       }}
     >
-      <StyledForm>
+      <Form>
         <label htmlFor="name">Name</label>
-        <Input name="name" placeholder="Please enter your name" />
-        <ErrMessage name="name" component="div" />
+        <Field name="name" placeholder="Please enter your name" />
+        <ErrorMessage name="name" component="div" />
 
         <label htmlFor="number">Number</label>
-        <Input
+        <Field
           name="number"
           placeholder="Please enter your number"
           type="text"
         />
-        <ErrMessage name="number" component="div" />
+        <ErrorMessage name="number" component="div" />
 
-        <BtnClose type="submit">Add contact</BtnClose>
-      </StyledForm>
+        <Button type="submit">Add contact</Button>
+      </Form>
     </Formik>
   );
 };

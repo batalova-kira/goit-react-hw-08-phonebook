@@ -1,7 +1,9 @@
-export default function HomePage ()  {
+import { Typography } from '@mui/material';
+
+export default function HomePage() {
   return (
     <>
-      <h2>It`s Home Page</h2>
+      <Typography>It`s Home Page</Typography>
     </>
   );
-};
+}
