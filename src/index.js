@@ -31,13 +31,13 @@ const theme = createTheme({
       main: teal[500],
       dark: teal[700],
       darker: teal[900],
-      contrastText: '#fff',
+      // contrastText: '#fff',
     },
     secondary: {
       main: purple[500],
       light: purple[500],
       // dark: will be calculated from palette.secondary.main,
-      contrastText: '#47008F',
+      // contrastText: '#47008F',
     },
   },
 });

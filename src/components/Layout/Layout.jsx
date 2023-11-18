@@ -1,6 +1,5 @@
 // import { Toaster } from 'react-hot-toast';
 import { NavBar } from 'components/AppBar/NavBar';
-import { SharedLayout } from './Layout.styled';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useAuth } from 'hooks/useAuth';
