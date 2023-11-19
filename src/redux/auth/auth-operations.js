@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { Alert } from '@mui/material';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
@@ -21,6 +22,10 @@ export const register = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
+      if (error?.response?.data?.name === 'MongoError') {
+        alert('This user is already registered! Please login!');
+      }
+
       return thunkAPI.rejectWithValue(error.message);
     }
   }
